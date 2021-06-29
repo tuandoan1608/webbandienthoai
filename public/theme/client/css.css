@@ -1,0 +1,207 @@
+.uppercate{
+    text-transform: uppercase;
+}
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,900,700italic,700,600italic,600,400italic);
+
+
+#days {
+  font-size: 100px;
+  color: #db4844;
+}
+#hours {
+  font-size: 100px;
+  color: #f07c22;
+}
+#minutes {
+  font-size: 100px;
+  color: #f6da74;
+}
+#seconds {
+  font-size: 50px;
+  color: #abcd58;
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked){
+	position: absolute;
+	left: -9999px;
+	width: 0;
+	height: 0;
+	visibility: hidden;
+}
+.checkbox-tools:checked + label,
+.checkbox-tools:not(:checked) + label{
+	position: relative;
+	display: inline-block;
+	padding: 20px;
+	width: 160px;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 1px;
+	margin: 0 auto;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 10px;
+	text-align: center;
+	border-radius: 4px;
+	overflow: hidden;
+	cursor: pointer;
+	text-transform: uppercase;
+  
+	-webkit-transition: all 300ms linear;
+	transition: all 300ms linear; 
+}
+.checkbox-tools:not(:checked) + label{
+	background-color: rgba(202, 202, 202, 0.1);
+  border: 1px solid rgb(255, 255, 255);
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.checkbox-tools:not(:checked) + label:hover{
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.checkbox-tools:checked + label::before{
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 4px;
+  border: 1px solid rgb(253, 89, 24);
+	z-index: -1;
+}
+.checkbox-tools:checked + label .uil,
+.checkbox-tools:not(:checked) + label .uil{
+	font-size: 24px;
+	line-height: 24px;
+	display: block;
+	padding-bottom: 10px;
+}
+
+.checkbox:checked ~ .section .container .row .col-12 .checkbox-tools:not(:checked) + label{
+	background-color: var(--light);
+	color: var(--dark-blue);
+	box-shadow: 0 1x 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.progressbar {
+    counter-reset: step;
+    padding: 0;
+    
+    /* for demo */
+    margin: 20px auto 0;
+    max-width: 800px;
+  }
+  
+  .progressbar li {
+    float: left;
+    list-style: none;
+    position: relative;
+    text-align: center;
+    width: calc(100% / 5);
+  
+  }
+  
+  .progressbar li:before {
+    background: #fff;
+    border: 2px solid #bebebe;
+    border-radius: 50%;
+    color: #bebebe;
+    content: counter(step);
+    counter-increment: step;
+    display: block;
+    font-weight: 700;
+    height: 30px;
+    line-height: 27px;
+    margin: 0 auto 10px;
+    text-align: center;
+    width: 30px;
+   
+    
+  }
+  
+  .progressbar li:after {
+    background: #5a5a5a;
+    content: '';
+    height: 3px;
+
+    position: absolute;
+    top: 15px;
+    width: 100%;
+    z-index: -1;
+    left: -50%;
+  }
+  
+  .progressbar li:first-child:after {
+    content: none;
+  }
+  
+  .progressbar li.active:after,
+  .progressbar li.complete:after {
+    background: #3aac5d;
+  
+  }
+  
+  .progressbar li.active:before,
+  .progressbar li.complete:before {
+    background: #3aac5d;
+    border-color: #3aac5d;
+    color: #fff;
+
+
+  }
+  
+  .progressbar li.active {
+    color: #3aac5d;
+    font-weight: 600;
+
+   
+  }
+.profile{
+	padding: 10px;
+}
+.profile-sidbar{
+	margin-top: 50px;
+	
+}
+.profile-sidbar div ul li{
+	padding: 10px;
+}
+.profile-sidbar div ul li:hover{
+	cursor: pointer;
+	color: #293a6c;
+}
+.myorder-top{
+	padding: 10px;
+	font-size: 20px;
+}.gach{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.thongtin{
+  padding: 0px;
+  margin: 0px;
+}
+.border{
+width: 100%;
+border-top: 1px solid black;
+height: 0px;
+}
+.sanpham{
+  padding: 10px 10px;
+}
+
+
+.imgcompare{
+  border:1px solid rgb(212, 212, 212);
+  position: relative;
+}
+.btncompare{
+ position: absolute;
+ top:44%;
+ left:40%;
+ border:1px dashed black;
+ background: none;
+
+}
