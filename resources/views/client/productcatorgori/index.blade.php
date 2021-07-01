@@ -72,7 +72,7 @@
                                                             <img src="{{ Storage::url($item->image) }}"
                                                                 alt="Li's Product Image">
                                                         </a>
-                                                      
+
                                                     </div>
                                                     <div class="product_desc">
                                                         <div class="product_desc_info">
@@ -93,7 +93,7 @@
                                                                 So sánh
                                                             </button></li>
                                                             <li><a class="links-details" href="/wishlist/{{ $item->id }}"><i class="fa fa-heart-o"></i></a></li>
-                                                           
+
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -127,8 +127,7 @@
                         <button class="btn-clear-all mb-sm-30 mb-xs-30">Clear all</button>
                         <!-- btn-clear-all end -->
                         <!-- filter-sub-area start -->
-                        <form action="/search" method="get">
-                            @csrf
+
                         <div class="filter-sub-area">
                             <h5 class="filter-sub-titel">Thương hiệu</h5>
                             <div class="categori-checkbox">
@@ -144,8 +143,8 @@
 
                             </div>
                         </div>
-                        <button type="submit">Lọc</button>
-                    </form>
+                        <button id="search">Lọc</button>
+
                     </div>
                     <!--sidebar-categores-box end  -->
 
@@ -162,31 +161,10 @@
 
             var brand = [];
 
-            // Listen for 'change' event, so this triggers when the user clicks on the checkboxes labels
-            // $('input[name="brand[]"]').on('change', function(e) {
 
-            //     e.preventDefault();
-            //     brand = []; 
-
-            //     $('input[name="brand[]"]:checked').each(function() {
-            //         brand.push($(this).val());
-            //     });
-
-            //     $.ajax({
-            //         url:'/search',
-            //         type:'get',
-            //         data:{
-            //             producttype_id:brand
-            //         },
-            //         success:function(data){
-            //             $('#sp').html(data);
-            //         }
-            //     })
-
-            // });
 
             $('#search').on('click',function(){
-                brand = []; 
+                brand = [];
 
                 $('input[name="brand[]"]:checked').each(function() {
                     brand.push($(this).val());
@@ -195,7 +173,7 @@
                     url:'/search',
                     type:'get',
                     data:{
-                        producttype_id:brand
+                        brand:brand
                     },
                     success:function(data){
                         $('#sp').html(data);
@@ -207,14 +185,14 @@
 
     </script>
     <script>
-   
+
         function compare(id){
-       
+
             var token=document.head.querySelector('[name=csrf-token]').content;
             $.ajax({
                 url:'/compare/add/' +id,
                 data:{
-               
+
                     _token:token
                 },
                 success:function(data){
@@ -223,7 +201,7 @@
             })
         }
         $('#compare').on('click',function(){
-           
+
         })
 
 </script>
