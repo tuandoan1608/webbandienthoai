@@ -89,7 +89,7 @@ class cardController extends Controller
     }
     public function checkout(Request $request)
     {
-
+        $emailuser =custommer::where('id',Auth::guard('custommer')->id())->first();
         $total = 0;
         $date_order = Carbon::now()->toDateString();
         $cart = Cart::instance('shopping')->content();
@@ -129,9 +129,9 @@ class cardController extends Controller
             ->get();
         Cart::instance('shopping')->destroy();
         $url = route('donhang', ['id' => $order->id]);
-        Mail::send('emails.mail', array('order' => $order, 'url' => $url, 'orderdetail' => $orderdetail), function ($message) {
-            $message->from('sinnobi11226@gmail.com', 'Đơn hàng mới');
-            $message->to('1710294@dlu.edu.vn', 'Đơn hàng mới');
+        Mail::send('emails.mail', array('order' => $order, 'url' => $url, 'orderdetail' => $orderdetail), function ($message) use ($emailuser) {
+            $message->from(env('MAIL_USERNAME'), 'Đơn hàng mới');
+            $message->to($emailuser->email, 'Đơn hàng mới');
             $message->subject('Một đơn hàng mới vừa được tạo');
         });
         return redirect('/');
