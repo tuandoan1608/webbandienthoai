@@ -328,7 +328,7 @@
                 </div>
             </div>
         </div>
-       
+
         <div class="product-area pt-35">
             <div class="container">
                 <div class="row">
@@ -337,7 +337,7 @@
                             <ul class="nav li-product-menu">
                                 <li><a class="active" data-toggle="tab" href="#description"><span>Thông tin</span></a>
                                 </li>
-                             
+
                                 <li><a data-toggle="tab" href="#reviews"><span>Đánh giá sản phẩm</span></a></li>
                             </ul>
                         </div>
@@ -350,7 +350,7 @@
                             {!! $product->content !!}
                         </div>
                     </div>
-                   
+
                     <div id="reviews" class="tab-pane" role="tabpanel">
                         <div class="product-reviews">
                             <div class="product-details-comment-block">
@@ -399,91 +399,11 @@
                                         </div>
                                     @endforeach
                                 </div>
-                              
+
                                 <div class="review-btn">
                                     <a class="review-links" href="#" data-toggle="modal" data-target="#mymodal">Viết đánh giá</a>
                                 </div>
 
-                                {{-- <div class="modal fade modal-wrapper" id="mymodal1">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-body">
-                                                <h3 class="review-page-title">Tất cả đánh giá</h3>
-                                                <div class="modal-inner-area row">
-
-                                                    <div class="col-lg-12">
-                                                        <div class="li-review-content">
-                                                            <!-- Begin Feedback Area -->
-                                                            <div class="feedback-area">
-                                                                <div class="feedback">
-                                                                    <div class="comment-review">
-
-                                                                        @foreach ($rating as $item)
-                                                                            <span>{{ $item->getcustommer->lastname }}</span>
-                                                                            <ul class="rating">
-                                                                                @if ($item->rating == 5)
-                                                                                    <li><i class="fa fa-star-o"></i></li>
-                                                                                    <li><i class="fa fa-star-o"></i></li>
-                                                                                    <li><i class="fa fa-star-o"></i></li>
-                                                                                    <li><i class="fa fa-star-o"></i></li>
-                                                                                    <li><i class="fa fa-star-o"></i></li>
-
-                                                                                @elseif ($item->rating==4)
-                                                                                    <li><i class="fa fa-star-o"></i></li>
-                                                                                    <li><i class="fa fa-star-o"></i></li>
-                                                                                    <li><i class="fa fa-star-o"></i></li>
-                                                                                    <li><i class="fa fa-star-o"></i></li>
-
-                                                                                    <li class="no-star"><i
-                                                                                            class="fa fa-star-o"></i></li>
-                                                                                @elseif ($item->rating==3)
-                                                                                    <li><i class="fa fa-star-o"></i></li>
-                                                                                    <li><i class="fa fa-star-o"></i></li>
-                                                                                    <li><i class="fa fa-star-o"></i></li>
-
-                                                                                    <li class="no-star"><i
-                                                                                            class="fa fa-star-o"></i></li>
-                                                                                    <li class="no-star"><i
-                                                                                            class="fa fa-star-o"></i></li>
-                                                                                @elseif ($item->rating==2)
-                                                                                    <li><i class="fa fa-star-o"></i></li>
-                                                                                    <li><i class="fa fa-star-o"></i></li>
-                                                                                    <li class="no-star"><i
-                                                                                            class="fa fa-star-o"></i></li>
-                                                                                    <li class="no-star"><i
-                                                                                            class="fa fa-star-o"></i></li>
-                                                                                    <li class="no-star"><i
-                                                                                            class="fa fa-star-o"></i></li>
-                                                                                @else
-                                                                                    <li><i class="fa fa-star-o"></i></li>
-                                                                                    <li class="no-star"><i
-                                                                                            class="fa fa-star-o"></i></li>
-                                                                                    <li class="no-star"><i
-                                                                                            class="fa fa-star-o"></i></li>
-                                                                                    <li class="no-star"><i
-                                                                                            class="fa fa-star-o"></i></li>
-                                                                                    <li class="no-star"><i
-                                                                                            class="fa fa-star-o"></i></li>
-                                                                                @endif
-                                                                            </ul>
-                                                                    </div>
-                                                                    <div class="comment-author-infos ">
-                                                                        <span
-                                                                            style="font-weight: normal">{{ $item->comment }}</span>
-                                                                        <em>{{ $item->created_at }}</em>
-                                                                    </div>
-                                                                    @endforeach
-
-                                                                </div>
-                                                            </div>
-                                                            <!-- Feedback Area End Here -->
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> --}}
                                 <!-- Begin Quick View | Modal Area -->
                                 <div class="modal fade modal-wrapper" id="mymodal">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -617,7 +537,7 @@
                                                         So sánh
                                                     </button></li>k
                                                     <li><a class="links-details" href="/wishlist/{{ $item->id }}"><i class="fa fa-heart-o"></i></a></li>
-                                                   
+
                                                 </ul>
                                             </div>
                                         </div>
@@ -638,7 +558,9 @@
     @section('sr')
         <script src="/theme/client/js/jquery.countdown.min.js"></script>
         <script>
+
             $("#checkout").on('click', function() {
+
                 let qty = $('#qty').val();
                 let token = document.head.querySelector('[name=csrf-token]').content;
                 let id = $('#checkout').val();

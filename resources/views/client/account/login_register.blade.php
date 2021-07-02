@@ -1,8 +1,6 @@
 @extends('client.master')
 @section('content')
-<div class="col-md-12" id="errors">
-    @include('flash::message')
-</div>
+
     <div class="breadcrumb-area">
         <div class="container">
             <div class="breadcrumb-content">
@@ -21,7 +19,7 @@
                 <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb-30">
                     <!-- Login Form s-->
                     <form action="/login" method="POST">
-                        
+
                         @csrf
                         <div class="login-form">
                             <h4 class="login-title">Đăng nhập</h4>
@@ -34,17 +32,17 @@
                                     </ul>
                                 </div>
                             @endif
-                            
-                        
+
+
                             <div class="row">
-                               
+
                                 <div class="col-md-12 col-12 mb-20">
                                     <label>Email</label>
-                                    <input class="mb-0" type="email" name="email" placeholder="Email Address">
+                                    <input class="mb-0" type="email" name="email" placeholder="Email Address" required>
                                 </div>
                                 <div class="col-12 mb-20">
                                     <label>Mật khẩu</label>
-                                    <input class="mb-0" type="password" name="password" placeholder="Password">
+                                    <input class="mb-0" type="password" name="password" placeholder="Password" required>
                                 </div>
                                 <div class="col-md-8">
                                     <div class="check-box d-inline-block ml-0 ml-md-2 mt-10">
@@ -70,27 +68,27 @@
                             <div class="row">
                                 <div class="col-md-6 col-12 mb-20">
                                     <label>Họ tên lót</label>
-                                    <input class="mb-0" name="firstname" type="text" placeholder="Họ tên lót">
+                                    <input class="mb-0" name="firstname" type="text" placeholder="Họ tên lót" required>
                                 </div>
                                 <div class="col-md-6 col-12 mb-20">
                                     <label>tên</label>
-                                    <input class="mb-0" type="text" name="lastname" placeholder="Tên">
+                                    <input class="mb-0" type="text" name="lastname" placeholder="Tên" required>
                                 </div>
                                 <div class="col-md-6 col-12 mb-20">
                                     <label>Mật khẩu</label>
-                                    <input class="mb-0" name="password" type="password" placeholder="Mật khẩu">
+                                    <input class="mb-0" name="password" type="password" placeholder="Mật khẩu" required>
                                 </div>
                                 <div class="col-md-6 col-12 mb-20">
                                     <label>Số điện thoại</label>
-                                    <input class="mb-0" type="number" name="phone" placeholder="Số điện thoại">
+                                    <input class="mb-0" type="number" name="phone" placeholder="Số điện thoại" required>
                                 </div>
                                 <div class="col-md-12 mb-20">
                                     <label>Email </label>
-                                    <input class="mb-0" type="email" name="email" placeholder="Email ">
+                                    <input class="mb-0" type="email" name="email" placeholder="Email " required>
                                 </div>
                                 <div class="col-md-12 mb-20">
                                     <label>Địa chỉ </label>
-                                    <input class="mb-0" type="text" name="address" placeholder="Địa chỉ">
+                                    <input class="mb-0" type="text" name="address" placeholder="Địa chỉ" required>
                                 </div>
 
                                 <div class="col-12">
